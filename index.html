@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>WDDEP: Mobile-First Example</title>
+	
+	<meta charset="UTF-8" />
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<body>
+
+	<section class="wrapper">
+		
+		<header>
+			<h1>Mobile-First Example</h1>
+		</header>
+		
+		<section class="card">
+			<h2>Mobile Styles = Base Styles</h2>
+			<p>Start by styling your mobile view first.</p>
+			<p>Your “default” CSS should be the same as your mobile CSS, so your mobile styling does <strong>not</strong> need a <code>media query</code>.</p>
+		</section>
+
+		<section class="card">
+			<h2>Flexbox Considerations</h2>
+			<p>Because your mobile view is likely built with boxes on top of other boxes, you probably don't need to use any <code>flex</code> styling in your base/mobile view.</p>
+			<p>You can leave your <code>div</code>, <code>article</code>, <code>section</code>, etc. elements in their default <code>display: block</code> state for your mobile view, and then add in <code>display: flex</code> styling as you move up to tablet and desktop views.</p>
+		</section>
+
+		<section class="card">
+			<h2>Media Queries</h2>
+			<p>For mobile-first designs, you should be using <code>min-width</code> media queries to add styling as you increase the screen size.</p>
+			<p>For example:<br><code>@media (min-width: 768px) { &hellip; }</code> for tablet<br><code>@media (min-width: 1024px) { &hellip; }</code> for desktop</p>
+		</section>
+
+		<section class="card">
+			<h2>Real World Media Queries</h2>
+			<p>Treehouse has you using a <code>320px</code> width for your mobile view size. In the real world, this is outdated, and the smallest size you'll likely be using is double that, <code>640px</code>.</p>
+			<p>Follow Treehouse's direction for their projects, but keep this in mind for your future work.</p>
+		</section>
+
+	</section>
+
+	<section class="wrapper info">
+		<h2>Breakpoints and the Reality of Tablet Views</h2>
+		<p>The reality is that tablet views are often neglected. You may be given a design to implement that doesn't even include a tablet view mockup. And even with a tablet view mockup, you may need to make changes once you begin to actually code the design and see how it functions.</p>
+		<p>Tablet views often end up with a mix of mobile and desktop styling. For example, it may make sense for your tablet view to use the multiple column layout of your desktop view, while maintaining the compact menu of your mobile view.</p>
+		<p>Another problem with tablet views is that there is a huge variety in tablet screen sizes and resolutions. This problem exists for desktop views as well, but is easily dealt with by using <code>max-width</code> values that are not always an option for the “in between” tablet views.</p>
+		<p>For tablet views especially, but also for all views, we should stop thinking in terms of device widths and in terms of <strong>breakpoints</strong>.</p>
+		<p>Breakpoints are the points where your styling changes, so every <code>media query</code> is a breakpoint. We use common screen sizes/resolutions to define some default breakpoints, which is how we come up with our mobile, tablet, and desktop media query width values. But your design might also need other breakpoints, or different values for these breakpoints.</p>
+		<p>You can test this by using the dev tools responsive mode and adjusting the width up and down. Every time the design seems unaligned, or something looks wrong, or the layout “breaks,” it's time to create a new media query using the width value that you're looking at.</p>
+		<p>For example, this page uses a media query set to <code>min-width: 1250px</code>, rather than the typical 1024px, because that's the point where the design broke.</p>
+		<p>You'll often see some alignment problems or other issues between mobile and tablet views. You may find that you need an extra media query between your mobile and tablet media queries to handle smaller widths that don't fit into your mobile media query but also don't look right with your tablet media query.</p>
+		
+	</section>
+		
+	<section class="wrapper info">
+		<h2>Considerations for Extra Large Screens</h2>
+		<p>You also might find that, as you expand the width during testing, you need more constraints on your desktop media query, or even a new media query for extra large screens. If your design is set at 100% width for the desktop view, how will this look to someone with an ultra-wide monitor?</p>
+		<p>You can often resolve this issue by setting a <code>max-width</code> on your container elements in your desktop view, but you also might want to take advantage of the extra screen space by creating an extra-large media query to, for example, allow more columns per row.</p>
+	</section>
+		
+	<section class="wrapper info">
+		<h2>Using This Page</h2>
+		<p>You can test this page in dev tools to see how it changes based on different screen sizes.</p>
+		<p>If you look at the CSS, you'll see the mobile view makes up the base styles, and further styling is added for each breakpoint using media queries.</p>
+		<p>You can look at <a href="https://github.com/lancecore/wddep-mobile-first-example/" target="_blank">this page's code here on GitHub</a>.</p>
+		<p>The <code>.wrapper</code> and <code>.card</code> sections have a few hints for how you might want to structure and style your code in Project 2. It also serves as an example of the proper file and folder structure that your projects should be using.</p>
+	</section>
+	
+	<section class="wrapper info">
+		<h2>Further Reading:</h2>
+		<p><a href="https://www.browserstack.com/guide/responsive-design-breakpoints" target="_blank">Defining Breakpoints in Responsive Web Design</a></p>
+		<p><a href="https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/" target="_blank">A Hands-On Guide to Mobile-First Responsive Design</a></p>
+		<p><a href="https://responsivedesign.is/articles/why-you-dont-need-device-specific-breakpoints/" target="_blank">Why you don’t need device specific breakpoints</a></p>
+	</section>
+	
+</body>
+</html>
